@@ -25,6 +25,8 @@ import { ApiService } from './api.service';
 import { PlannerComponent } from './planner/planner.component';
 import { SalaryPipe } from './salary.pipe';
 import { AsyncMessageComponent } from './async-message/async-message.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { ForecastService } from './forecast.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { AsyncMessageComponent } from './async-message/async-message.component';
     QuizListComponent,
     PlannerComponent,
     SalaryPipe,
-    AsyncMessageComponent
+    AsyncMessageComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { AsyncMessageComponent } from './async-message/async-message.component';
   providers: [
     UsersService, 
     EmsService, 
-    ApiService
+    ApiService,
+    ForecastService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,6 +9,7 @@ import { PeekABooParentComponent } from './peek-a-boo-parent.component';
 import { QuizListComponent } from './quiz/quiz.component';
 import { PlannerComponent } from './planner/planner.component';
 import { AsyncMessageComponent } from './async-message/async-message.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: "peekaboo", component: PeekABooParentComponent },
   { path: "quiz", component: QuizListComponent },
   { path: "todo", component: PlannerComponent },
-  { path: "asyncpipe", component: AsyncMessageComponent }
+  { path: "asyncpipe", component: AsyncMessageComponent },
+  { path: "forecast", component: ForecastComponent }
 ];
 
 @NgModule({
