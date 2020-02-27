@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">        
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Basic salary</th>
+                    <th>Net salary</th>
+                    <th>Consent</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of employeeData">
+                    <td>{{e.id}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.password}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.department}}</td>
+                    <td>{{e.baseSalary | currency:'INR' }}</td>
+                    <td>{{e.baseSalary | salary | currency:'INR' }}</td>
+                    <td>
+                        <input type="checkbox" [checked]="e.consent" />
+                    </td>
+                    <td [routerLink]="['/update', e.id]">
+                        <a class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="removeEmployee(e.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <input type="radio" name="menu" value="breakfast" (click)="setMenu('b')" /> Breakfast <br>
+            <input type="radio" name="menu" value="lunch" (click)="setMenu('L')" /> Lunch
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <ul class="list-group">
+                <li appHighlight bgColor="yellow" textColor="red" *ngFor="let m of menu" class="list-group-item" [ngClass]="menuClass" (click)="setItem(m)">{{m}}</li>
+            </ul>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div [ngSwitch] = "selectedMenu" [ngStyle]="priceCss">
+                <div *ngSwitchCase = "'Idly'">Price : {{priceList[0]}}</div>
+                <div *ngSwitchCase = "'Dosa'">Price : {{priceList[1]}}</div>
+                <div *ngSwitchCase = "'Poori'">Price : {{priceList[2]}}</div>
+                <div *ngSwitchCase = "'Chappathi'">Price : {{priceList[3]}}</div>
+                <div *ngSwitchCase = "'Veg-meals'">Price : {{priceList[4]}}</div>
+                <div *ngSwitchCase = "'Nonveg-meals'">Price : {{priceList[5]}}</div>
+                <div *ngSwitchCase = "'Briyani'">Price : {{priceList[6]}}</div>
+                <div *ngSwitchCaseDefault>Price : 0</div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+
+

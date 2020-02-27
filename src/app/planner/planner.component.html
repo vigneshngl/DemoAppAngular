@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2 class="bg-info">Monthly Planner</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Serial #</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data; let i of index">
+                <td> {{i+1}} </td>
+                <td> {{item.title}} </td>
+                <td> {{item.date}} </td>
+                <td> {{item.time}} </td>
+                <td> {{item.description}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

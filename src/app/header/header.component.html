@@ -1,0 +1,12 @@
+<div class="container bg-primary">
+<div>
+    <figure>
+        <figcaption>{{restaurantTitle}}</figcaption>
+        <img [src]="restaurantLogo" title="My restaurant image" [height]="height" [width]="width"/>
+    </figure>
+</div>
+<div>
+    <input type="radio" name="companyName" (click)="setdata('B')">Raaga banquet
+    <input type="radio" name="companyName" (click)="setdata('I')">Raaga Imperio
+</div>
+</div>

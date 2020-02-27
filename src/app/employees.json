@@ -1,0 +1,72 @@
+{  
+  "employees": [
+    {
+      "id": 1,
+      "name": "Vignesh M",
+      "password": "viki123",
+      "email": "vignesh@test.com",
+      "department": "IT",
+      "baseSalary": 10000,
+      "consent": true
+    },
+    {
+      "id": 2,
+      "name": "Chandru S",
+      "password": "chan123",
+      "email": "chandru@test.com",
+      "department": "IT",
+      "baseSalary": 10000,
+      "consent": true
+    },
+    {
+      "id": 3,
+      "name": "Bagya A",
+      "password": "bagy123",
+      "email": "bagya@test.com",
+      "department": "Admin",
+      "baseSalary": 10000,
+      "consent": false
+    },
+    {
+      "id": 4,
+      "name": "Krithisha V",
+      "password": "krit123",
+      "email": "krithisha@test.com",
+      "department": "IT",
+      "baseSalary": 10000,
+      "consent": true
+    },
+    {
+      "id": 662,
+      "name": "Minu",
+      "password": "minu123",
+      "email": "minu@test.com",
+      "department": "Health",
+      "baseSalary": 10000,
+      "consent": true
+    }
+  ],
+  "TodoList": [
+    {
+      "id": 1,
+      "date": "2020-02-26",
+      "time": "10:30 - 06:30",
+      "title": "Training",
+      "description": "Angular 8 training"
+    },
+    {
+      "id": 2,
+      "date": "2020-02-27",
+      "time": "8:30 - 06:30",
+      "title": "Meeting",
+      "description": "Customer visit for project testing"
+    },
+    {
+      "id": 3,
+      "date": "2020-02-28",
+      "time": "07:30 - 12:30",
+      "title": "Party",
+      "description": "Project completion party"
+    }
+  ]
+}

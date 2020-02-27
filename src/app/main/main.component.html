@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row">
+    <div class="col-sm-4">
+        Existing Customer
+    </div>
+    <div class="col-sm-8">
+        <input type="checkbox" name="existing" [(ngModel)]="isExisting" />
+    </div>
+</div>
+<div *ngIf="!isExisting then showName else showMembership">
+
+</div>
+<ng-template #showName>
+<div class="row">
+    <div class="col-sm-4">
+        Customer Name
+    </div>
+    <div class="col-sm-8">  
+        <input type="text" name="cname" [(ngModel)]="customerName" />
+    </div>
+</div>
+</ng-template>
+<ng-template #showMembership>
+<div class="row">
+    <div class="col-sm-4">
+        Membership #
+    </div>
+    <div class="col-sm-8">
+        <input type="text" name="membershipNo" [(ngModel)]="membershipNum" />
+    </div>
+</div>
+</ng-template>
+<div class="row">
+    <div class="col-sm-12">
+        Hi {{customerName}}, your membership number is {{membershipNum}}
+    </div>
+</div>
+</div>
+<app-menu></app-menu>

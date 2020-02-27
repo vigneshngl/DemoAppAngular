@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <h5 class="card-header info-color white-text text-center py-4">
+                    <strong>Update Employee details</strong>
+                </h5>
+                <div class="card-body px-lg-5 pt 0">
+                    <form class="text-center" style="color: #757575;"
+                        [formGroup]="form" (ngSubmit)="register()">
+                        
+                        <div class="md-form mt-3">
+                            <label>Employee Name :</label>
+                            <input formControlName="empname" type="text" class="form-control" />
+                        </div>
+                        <div *ngIf="form.get('empname').hasError('required') &&
+                            (form.get('empname').touched || form.get('empname').dirty)"
+                            class="alert alert-danger">
+                            Employee name can't be empty
+                        </div>
+                        <div *ngIf="form.get('empname').hasError('pattern') &&
+                            (form.get('empname').touched || form.get('empname').dirty)"
+                            class="alert alert-danger">
+                            Employee name can't have special characters and numbers
+                        </div>
+                        
+                        <div formGroupName="password">
+                            <div class="md-form">
+                                <label>Password : </label>
+                                <input formControlName="emppassword" type="password" class="form-control" />
+            
+                                <label>Confirm password : </label>
+                                <input formControlName="empcpassword" type="password" class="form-control" />
+                            </div>
+                        </div>
+                        <div *ngIf="(form.get('password.emppassword').touched || form.get('password.emppassword').dirty ||
+                            form.get('password.empcpassword').touched || form.get('password.empcpassword').dirty)">
+                            <div *ngIf="(form.get('password.emppassword').hasError('required') || form.get('password.empcpassword').hasError('required'))"
+                                class="alert alert-danger">
+                                Password can't be empty
+                            </div>
+                            <div *ngIf="(form.get('password.emppassword').hasError('minlength') || form.get('password.empcpassword').hasError('minlength'))"
+                                class="alert alert-danger">
+                                Password should be more than 7 characters long
+                            </div>
+                            <div *ngIf="form.get('password.emppassword').value != form.get('password.empcpassword').value"
+                                class="alert alert-danger">
+                                Password and Confirm password should match
+                            </div>
+                        </div>
+            
+                        <div class="md-form mt-3">
+                            <label>Email : </label>
+                            <input formControlName="email" type="email" class="form-control" />
+                        </div>
+                        <div *ngIf="(form.get('email').touched || form.get('email').dirty) && form.get('email').hasError('required')"
+                            class="alert alert-danger">
+                            Email is mandatory
+                        </div>
+                        <div *ngIf="(form.get('email').touched || form.get('email').dirty) && form.get('email').hasError('email')"
+                            class="alert alert-danger">
+                            Enter valid email address
+                        </div>
+            
+                        <div class="md-form mt-3">
+                            <label>Department : </label>
+                            <select formControlName="empdept" class="mdb-select">
+                                <option *ngFor="let d of departments" [value]="d">{{d}}</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-check">
+                            <input formControlName="consent" type="checkbox" class="form-check-input" />
+                            I agree
+                        </div>
+                        <div *ngIf="hasErrorConsent()"
+                            class="alert alert-danger">
+                            Agree to proceed
+                        </div>
+            
+                        <button type="submit" class="btn btn-outline-info btn-rounded">Register</button> &nbsp;
+                        <button type="reset" class="btn btn-outline-secondary btn-rounded">Clear</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

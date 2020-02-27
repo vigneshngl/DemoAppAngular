@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td>
+            Name
+        </td>
+        <td>
+            Department
+        </td>
+        <td>
+            Photo
+        </td>
+    </tr>
+    <tr *ngFor="let e of employees">
+        <td>
+            {{e.name}}
+        </td>
+        <td>
+            {{e.department}}
+        </td>
+        <td>
+            <img [src]="e.photo" />
+        </td>
+    </tr>
+</table>
