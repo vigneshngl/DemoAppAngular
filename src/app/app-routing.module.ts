@@ -11,6 +11,7 @@ import { PlannerComponent } from './planner/planner.component';
 import { AsyncMessageComponent } from './async-message/async-message.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { AuthGuard } from './auth.guard';
+import { DatatableComponent } from './datatable/datatable.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: "quiz", component: QuizListComponent },
   { path: "todo", component: PlannerComponent },
   { path: "asyncpipe", component: AsyncMessageComponent },
-  { path: "forecast", component: ForecastComponent }
+  { path: "forecast", component: ForecastComponent },
+  { path: "datatable", component: DatatableComponent }
 ];
 
 @NgModule({

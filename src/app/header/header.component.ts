@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { Employee } from '../employee';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +16,17 @@ export class HeaderComponent implements OnInit {
   height : number = 150
   width : number = 150
 
-  constructor(private authService : AuthService) { }
+  constructor(private authService : AuthService, private dialog : MatDialog) { }
 
   login() {
-    let email = "vignesh@test.com"
-    let password = "viki123"
-    let employee = this.authService.login(email, password);
-    console.log(employee)
+    
+    let loginEmployee = new Employee()
+    
+    const dialogRef = this.dialog.open(LoginDialogComponent, { width : '450px', data : { loginEmployee } })
+
+    dialogRef.afterClosed().subscribe(result => {
+      let employee = this.authService.login(result.email, result.password)
+    })
   }
 
   logout() {

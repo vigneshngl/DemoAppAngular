@@ -28,6 +28,14 @@ import { AsyncMessageComponent } from './async-message/async-message.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { ForecastService } from './forecast.service';
 import { AuthService } from './auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { DatatableComponent } from './datatable/datatable.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -50,14 +58,25 @@ import { AuthService } from './auth.service';
     PlannerComponent,
     SalaryPipe,
     AsyncMessageComponent,
-    ForecastComponent
+    ForecastComponent,
+    LoginDialogComponent,
+    DatatableComponent
+  ],
+  entryComponents: [
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [
     UsersService, 
