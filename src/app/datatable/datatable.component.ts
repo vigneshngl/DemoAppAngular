@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 const user_data = [
   { name : "Vignesh", country : "India", age : 32, city : "Trivandrum", isSingle: false },
@@ -21,9 +23,17 @@ export class DatatableComponent implements OnInit {
   displayedColumns = [ "name", "country", "age", "city", "isSingle" ]
   dataSource = new MatTableDataSource(user_data)
 
+  @ViewChild(MatSort, {static : true})
+  sort : MatSort
+
+  @ViewChild(MatPaginator, {static : true})
+  paginator : MatPaginator
+
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource.sort = this.sort
+    this.dataSource.paginator = this.paginator
   }
 
   applyFilter(event: Event) {

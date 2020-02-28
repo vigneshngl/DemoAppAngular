@@ -36,6 +36,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { DatatableComponent } from './datatable/datatable.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [
     UsersService, 
