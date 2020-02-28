@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,18 @@ export class HeaderComponent implements OnInit {
   height : number = 150
   width : number = 150
 
-  constructor() { }
+  constructor(private authService : AuthService) { }
+
+  login() {
+    let email = "vignesh@test.com"
+    let password = "viki123"
+    let employee = this.authService.login(email, password);
+    console.log(employee)
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 
   ngOnInit(): void {
   }

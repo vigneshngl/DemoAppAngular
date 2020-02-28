@@ -27,6 +27,7 @@ import { SalaryPipe } from './salary.pipe';
 import { AsyncMessageComponent } from './async-message/async-message.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { ForecastService } from './forecast.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ForecastService } from './forecast.service';
     UsersService, 
     EmsService, 
     ApiService,
-    ForecastService
+    ForecastService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

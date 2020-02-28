@@ -10,6 +10,7 @@ import { QuizListComponent } from './quiz/quiz.component';
 import { PlannerComponent } from './planner/planner.component';
 import { AsyncMessageComponent } from './async-message/async-message.component';
 import { ForecastComponent } from './forecast/forecast.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -20,8 +21,8 @@ const routes: Routes = [
       {path: "registrationR", component:EmpoloyeeregRfComponent}
     ]
   },
-  { path: "ems", component: EmsComponent },
-  { path: "update/:id", component: UpdateEmployeeComponent },
+  { path: "ems", component: EmsComponent, canActivate: [AuthGuard] },
+  { path: "update/:id", component: UpdateEmployeeComponent, canActivate: [AuthGuard] },
   { path: "peekaboo", component: PeekABooParentComponent },
   { path: "quiz", component: QuizListComponent },
   { path: "todo", component: PlannerComponent },
