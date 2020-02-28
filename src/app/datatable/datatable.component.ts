@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 const user_data = [
   { name : "Vignesh", country : "India", age : 32, city : "Trivandrum", isSingle: false },
@@ -18,11 +19,15 @@ const user_data = [
 export class DatatableComponent implements OnInit {  
 
   displayedColumns = [ "name", "country", "age", "city", "isSingle" ]
-  dataSource = user_data
+  dataSource = new MatTableDataSource(user_data)
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
